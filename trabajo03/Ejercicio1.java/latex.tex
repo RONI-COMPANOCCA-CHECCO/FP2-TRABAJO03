@@ -1,0 +1,268 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{rcompanocca@unsa.edu.pe}
+\newcommand{\itemStudent}{Roni Companocca Checco}
+\newcommand{\itemCourse}{Programación}
+\newcommand{\itemCourseCode}{20210558}
+\newcommand{\itemSemester}{II}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - B}
+\newcommand{\itemInput}{Del 22 Diciembre 2023}
+\newcommand{\itemOutput}{Al 23 Diciembre 2023}
+\newcommand{\itemPracticeNumber}{03}
+\newcommand{\itemTheme}{Herencia - Ejercicio 01}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{abet.png}}}
+\fancyfoot[L]{Estudiante Roni Companocca Checco}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Teoria \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Teoria} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+
+    \section{EQUIPOS, MATERIALES Y TEMAS UTILIZADOS}
+	\begin{itemize}
+		\item Sistema Operativo Windows
+		\item OpenJDK 64-Bits 17.0.7.
+		\item Git 2.39.2.	
+  	\item Cuenta en GitHub con el correo institucional.
+	\end{itemize}
+
+    \section{URL DE REPOSITORIO GITHUB}
+	\begin{itemize}
+		\item URL para el Repositorio GitHub.
+		\item \url{https://github.com/RONI-COMPANOCCA-CHECCO}
+		\item URL para el laboratorio 22 en el Repositorio GitHub.	
+        \item \url{https://github.com/RONI-COMPANOCCA-CHECCO/FP2-TRABAJO03/tree/master/trabajo03/Ejercicio1.java}
+	\end{itemize}
+    
+    \section{Ejercicio 01:}
+	\begin{itemize}
+        \item Crear una clase base denominada Punto que conste de las coordenadas x e y. A partir de esta clase, definir una clase denominada Circulo que tenga las coordenadas del centro y un atributo denominado radio. Entre las funciones miembro de la primera clase, deberá existir una función distancia() que devuelva la distancia entre dos puntos, donde:
+        \item Distancia = ((x2 – x1)2 + (y2 – y1)2)1/2
+        \item Codigo
+        \item clase Punto.java
+        \begin{lstlisting}[language=java]
+// RONI COMPANOCCA CHECCO
+// FP2 - TRABAJO 03
+// CUI 20210558
+// IMORTAMOS ESTA CLASE PARA PODER REALIZAR, LAS SIGUIENTES OERACIONES MATEMATICAS
+import java.lang.Math;
+public class Punto {
+    double x, y;
+    // REALIZAMOS EL SIGUIENTE CONSTRUCTOR
+    public Punto(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    // el método distancia calcula y devuelve la distancia entre el punto actual (this) y otro punto (otroPunto)
+    public double distancia(Punto otroPunto) {
+        return Math.sqrt(Math.pow((this.x - otroPunto.x), 2) + Math.pow((this.y - otroPunto.y), 2));
+    }
+}
+        \end{lstlisting}
+
+        \item clase Circulo.java
+        \begin{lstlisting}[language=java]
+// RONI COMPANOCCA CHECCO
+// FP2 - TRABAJO 03
+// CUI 20210558
+// IMORTAMOS ESTA CLASE PARA PODER REALIZAR, LAS SIGUIENTES OERACIONES MATEMATICAS
+import java.lang.Math;
+// La palabra clave extends la utilizamos en la declaración de una clase para indicar que la clase que estamos declarando es una subclase
+public class Circulo extends Punto {
+    double radio;
+    // REALIZAMOS EL SIGUIENTE CONSTRUCTOR
+    public Circulo(double centroX, double centroY, double radio) {
+        super(centroX, centroY);
+        this.radio = radio;
+    }
+    // creamos este metodo que se utiliza para calcular y devolver el área de un círculo.
+    public double obtenerArea() {
+        return Math.PI * Math.pow(this.radio, 2);
+    }
+}
+        \end{lstlisting}
+
+        \item clase Main.java
+        \begin{lstlisting}[language=java]
+// RONI COMPANOCCA CHECCO
+// FP2 - TRABAJO 03
+// CUI 20210558
+public class Main {
+    public static void main(String[] args) {
+        // Este código se utiliza para crear dos instancias
+        Punto punto1 = new Punto(1, 2);
+        Punto punto2 = new Punto(4, 6);
+        // esta linea invoca un método llamado distancia en el objeto punto1 de la clase Punto. 
+        double distanciaEntrePuntos = punto1.distancia(punto2);
+        System.out.println("Distancia entre los puntos: " + distanciaEntrePuntos);
+        // Esta línea de código crea una nueva instancia de la clase Circulo 
+        Circulo circulo = new Circulo(0, 0, 5);
+        System.out.println("Área del círculo: " + circulo.obtenerArea());
+    }
+}
+        \end{lstlisting}
+        \item Cuando ejecutamos los codigos lo que nos sale como respuesta es la siguiente, calculamos la distacia de dos puntos y el area del circulo.
+        \centering
+        \includegraphics[height=3.5cm]{ima1.jpeg}
+        \item si lo resolvemos matematicamente la distacia entre esos dos puntos este seria la secuencia, pero como nos damos cuenta la respuesta es la misma
+        \includegraphics[height=8cm]{ima2.jpeg}
+        \item De igual manera calculamos el area del circulo y la respuesta nos da lo mismo
+        \includegraphics[height=8cm]{ima3.jpeg}
+        
+	\end{itemize}
+
+	\section{REFERENCIAS}
+	\begin{itemize}
+		\item M. Aedo, “Fundamentos de Programación 2 - Tópicos de Programación Orientada a Objetos”, Primera Edición, 2021, Editorial UNSA.
+		\item \url{https://github.com/rescobedoq/programacion.git}
+		\item J. Dean, "Introduction to programming with Java: A Problem Solving Approach”, Third Edition, 2021, McGraw-Hill.
+        \item C. T. Wu, "An Introduction to Object-Oriented Programming with Java", Fifth Edition, 2010, McGraw-Hill.
+        \item P. Deitel, "Java How to Program", Eleventh Edition, 2017, Prentice Hall.
+	\end{itemize}
+	
+%\clearpage
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+			
+\end{document}
